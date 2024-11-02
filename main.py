@@ -12,6 +12,5 @@ def read_sheep(id: int):
 def add_sheep(sheep: Sheep):
     if sheep.id in db.data:
         raise HTTPException(status_code=400, detail="Sheep already exists")
-    
     db.data[sheep.id] = sheep
     return sheep
